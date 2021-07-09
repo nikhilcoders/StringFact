@@ -1,0 +1,64 @@
+Import java.util.*;
+
+Class Q3{
+
+
+static void reverseStr(String str)
+{
+    int n = str.length();
+    for (int i=0; i<n/2; i++)
+       swap(str[i], str[n-i-1]);
+}
+
+
+Public static int main(String []a){
+	int num;
+Scanner s=new Scanner(System.in);
+num=s.next();
+	if(num>=1 && num<=100){
+		while(num!=0){
+			int n;
+			n=s.next();
+			if(n>=3 && n<=100){
+				String s1,r="",str="";
+				s.nextLine();
+				s1=s.nextLine();
+				if(s1[0].equals(“1”) && s1[s.length()-1].equals(“1”)){
+					for(int j=0;j<s1.length();j++){
+						char ch = s1[j];
+						if(ch != ' '){
+							r+=ch;
+						}
+					}
+					int len = r.length();
+					if(n!=len){
+						System.out.println(“no”);
+						
+						break;
+					}
+					str = r;
+					reverseStr(str);
+					if(r.equals(str)){
+						System.out.println(“yes”);
+					}else{
+					System.out.println(“no);
+					}
+				}else{
+					System.out.println(“no);
+
+				}
+			}else{
+				System.out.println(“no);
+
+			}
+			num--;
+		}
+	}else{
+		System.out.println(“no);
+
+	}
+	return 0;
+}
+
+
+}
